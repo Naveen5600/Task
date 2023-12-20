@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+
+class person
+{
+    String name;
+    int age=18;
+
+
+    person(String name,int age)
+    {
+     this.name=name;
+     this.age=age;
+    }
+
+    public void display()
+    {
+        System.out.println("person name and age:"+name+" and "+age);
+    }
+
+}
+public class Main {
+    public static void main(String[] args) {
+    person obj1=new person("tamil",20);
+        person obj2=new person("naveen",19);
+        person obj3=new person("kannan",21);
+
+
+        obj1.display();
+        obj2.display();
+        obj3.display();
+
+        
+  
+  
+    }
+}

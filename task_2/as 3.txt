@@ -1,0 +1,72 @@
+import java.util.Scanner;
+
+
+class Account
+{
+    public double balance;
+
+    Account()
+    {
+        this.balance=0.00;
+    }
+
+    Account(double cu_balance)
+    {
+        this.balance=cu_balance;
+    }
+
+    public double deposite(double amount)
+    {
+        this.balance=amount+this.balance;
+
+        return this.balance;
+
+    }
+
+    public double withdraw(double amount)
+    {
+        if(this.balance>=amount)
+        {
+            this.balance=this.balance-amount;
+
+        }else {
+
+            System.out.println("Insufficient funds,Withdrawal unsuccessful.");
+        }
+        return this.balance;
+    }
+
+    public double display()
+    {
+        return this.balance;
+    }
+}
+
+
+public class Main {
+
+
+    public static void main(String[] args) {
+
+        Account account1=new Account();
+
+        System.out.println("the account 1 balance is :"+account1.display());
+
+        Account account2=new Account(1000);
+        System.out.println("the account 2 balance is :"+account2.display());
+
+
+        System.out.println(" After deposite account 1 balance is :"+account1.deposite(500));
+        System.out.println("After withdraw account 1 balance is :"+account1.withdraw(200));
+
+        System.out.println(" After deposite account 2 balance is :"+account2.deposite(300));
+        System.out.println("After withdraw account 2 balance is :"+ account2.withdraw(100));
+
+
+        System.out.println("the account 1 balance is :"+account1.display());
+        System.out.println("the account 2 balance is :"+account2.display());
+
+
+
+    }
+}

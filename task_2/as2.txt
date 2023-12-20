@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+class Product {
+    int pid;
+    double price;
+    int quantity;
+
+    
+    public Product(int pid, double price, int quantity) {
+        this.pid = pid;
+        this.price = price;
+        this.quantity = quantity;
+    }
+    public String toString() {
+        return "Product ID: " + pid + ", Price: " + price + ", Quantity: " + quantity;
+    }
+
+
+    public void cal(int pid,int price,int quantity)
+    {
+        int calcul=price*quantity;
+        System.out.println("total amount spented is :"+calcul);
+    }
+}
+
+
+
+
+
+
+public class Main {
+
+
+    public static void main(String[] args)
+    {
+
+
+        Scanner scanner = new Scanner(System.in);
+
+
+
+
+
+
+        Product[] products = new Product[2];
+
+
+        for (int i = 0; i < products.length; i++) {
+            System.out.println("Enter details for Product " + (i +1)+ ":");
+            System.out.print("Product ID: ");
+            int pid = scanner.nextInt();
+
+            System.out.print("Price: ");
+            double price = scanner.nextDouble();
+
+            System.out.print("Quantity: ");
+            int quantity = scanner.nextInt();
+
+
+            products[i] = new Product(pid,price,quantity);
+        }
+
+
+
+
+        int highestPrice = Integer.MIN_VALUE;
+        int highestPriceProductId = -1;
+
+        for (Product product : products) {
+            if (product.price > highestPrice) {
+                highestPrice = (int)product.price;
+                highestPriceProductId = product.pid;
+            }
+        }
+
+        if (highestPriceProductId != -1) {
+            System.out.println("Product ID with the highest price: " + highestPriceProductId);
+        } else {
+            System.out.println("No products found.");
+        }
+        for (Product product : products) {
+            product.cal(product.pid, product.quantity, (int) product.price);
+        }
+
+    }
+}

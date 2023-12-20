@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+
+class Person{
+    String name;
+    int age;
+
+}
+
+class Employee extends Person{
+    int employeeid;
+    double salary;
+
+
+    Employee(String name,int age,int employeeid,double salary)
+    {
+        super.name=name;
+        super.age=age;
+        this.employeeid=employeeid;
+        this.salary=salary;
+    }
+    public void display()
+    {
+        System.out.println(name+" "+age+" "+employeeid+" "+salary);
+    }
+}
+
+
+
+public class Main {
+
+
+    public static void main(String[] args)
+    {
+
+
+        Employee employee=new Employee( "kavin",21,1,1000.00);
+
+         employee.display();
+    }
+}
